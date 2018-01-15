@@ -1,0 +1,345 @@
+[
+  {
+    "line": 1,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 4458324766,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Preps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 4,
+        "name": "Looking for positions in Cracow",
+        "description": "",
+        "id": "list-of-available-positions;looking-for-positions-in-cracow",
+        "after": [
+          {
+            "result": {
+              "duration": 910724047,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Preps.afterScenatio()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8546087316,
+              "status": "passed"
+            },
+            "line": 5,
+            "name": "User is on the \"https://www.avanade.com/en\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://www.avanade.com/en",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.user_is_on_the_page(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 531263171,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "User navigates to Career block",
+            "match": {
+              "location": "StepDefinitions.user_navigates_to_Career_block()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4039079667,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "User looking for \" \" available positions in \"Poland\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": " ",
+                  "offset": 18
+                },
+                {
+                  "val": "Poland",
+                  "offset": 45
+                }
+              ],
+              "location": "StepDefinitions.user_looking_for_available_positions_in(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4595288018,
+              "error_message": "java.lang.AssertionError: Number of positions is less than expected. Expected: 5 but actual is 4\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepdefinitions.StepDefinitions.user_see_more_than_positions_available_in(StepDefinitions.java:68)\r\n\tat ✽.Then User see more than 5 positions available in \"Krakow\"(AvailablePositions.feature:8)\r\n",
+              "status": "failed"
+            },
+            "line": 8,
+            "name": "User see more than 5 positions available in \"Krakow\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "5",
+                  "offset": 19
+                },
+                {
+                  "val": "Krakow",
+                  "offset": 45
+                }
+              ],
+              "location": "StepDefinitions.user_see_more_than_positions_available_in(int,String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 7903849000,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Preps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 10,
+        "name": "Looking for positions in Warsaw",
+        "description": "",
+        "id": "list-of-available-positions;looking-for-positions-in-warsaw",
+        "after": [
+          {
+            "result": {
+              "duration": 844940790,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Preps.afterScenatio()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 10099315541,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "User is on the \"https://www.avanade.com/en\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://www.avanade.com/en",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.user_is_on_the_page(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 520259785,
+              "status": "passed"
+            },
+            "line": 12,
+            "name": "User navigates to Career block",
+            "match": {
+              "location": "StepDefinitions.user_navigates_to_Career_block()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3666179305,
+              "status": "passed"
+            },
+            "line": 13,
+            "name": "User looking for \" \" available positions in \"Poland\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": " ",
+                  "offset": 18
+                },
+                {
+                  "val": "Poland",
+                  "offset": 45
+                }
+              ],
+              "location": "StepDefinitions.user_looking_for_available_positions_in(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 4036044251,
+              "status": "passed"
+            },
+            "line": 14,
+            "name": "User see more than 0 positions available in \"Warsaw\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "0",
+                  "offset": 19
+                },
+                {
+                  "val": "Warsaw",
+                  "offset": 45
+                }
+              ],
+              "location": "StepDefinitions.user_see_more_than_positions_available_in(int,String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      },
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 3009587984,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Preps.beforeScenario()"
+            }
+          }
+        ],
+        "line": 16,
+        "name": "Check qualification in a job offer",
+        "description": "",
+        "id": "list-of-available-positions;check-qualification-in-a-job-offer",
+        "after": [
+          {
+            "result": {
+              "duration": 811231373,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Preps.afterScenatio()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 8347435043,
+              "status": "passed"
+            },
+            "line": 17,
+            "name": "User is on the \"https://www.avanade.com/en\" page",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://www.avanade.com/en",
+                  "offset": 16
+                }
+              ],
+              "location": "StepDefinitions.user_is_on_the_page(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 452532378,
+              "status": "passed"
+            },
+            "line": 18,
+            "name": "User navigates to Career block",
+            "match": {
+              "location": "StepDefinitions.user_navigates_to_Career_block()"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 4124610351,
+              "status": "passed"
+            },
+            "line": 19,
+            "name": "User looking for \"Entry Level Software Engineer\" available positions in \"All Locations\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Entry Level Software Engineer",
+                  "offset": 18
+                },
+                {
+                  "val": "All Locations",
+                  "offset": 73
+                }
+              ],
+              "location": "StepDefinitions.user_looking_for_available_positions_in(String,String)"
+            },
+            "keyword": "And "
+          },
+          {
+            "result": {
+              "duration": 3887313792,
+              "status": "passed"
+            },
+            "line": 20,
+            "name": "User navigates to a job description for \"Entry Level Software Engineer, Seattle\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Entry Level Software Engineer, Seattle",
+                  "offset": 41
+                }
+              ],
+              "location": "StepDefinitions.userNavigatesToAJobDescriptionFor(String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 63014035,
+              "status": "passed"
+            },
+            "line": 21,
+            "name": "User see qualification \"Strong time management skills\" in the job description",
+            "match": {
+              "arguments": [
+                {
+                  "val": "Strong time management skills",
+                  "offset": 24
+                }
+              ],
+              "location": "StepDefinitions.userSeeQualificationInTheJobDescription(String)"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "List of available positions",
+    "description": "",
+    "id": "list-of-available-positions",
+    "keyword": "Feature",
+    "uri": "AvailablePositions.feature"
+  }
+]

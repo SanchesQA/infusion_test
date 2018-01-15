@@ -1,0 +1,34 @@
+-------------------------------------------------------------------------------
+Test set: TestRunner
+-------------------------------------------------------------------------------
+Tests run: 16, Failures: 2, Errors: 2, Skipped: 0, Time elapsed: 143.894 s <<< FAILURE! - in TestRunner
+Then User see more than 5 positions available in "Krakow"(Scenario: Looking for positions in Cracow)  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: Number of positions is less than expected. Expected: 5 but actual is 4
+
+Scenario: Looking for positions in Cracow  Time elapsed: 0.001 s  <<< FAILURE!
+java.lang.AssertionError: Number of positions is less than expected. Expected: 5 but actual is 4
+
+Then User see qualification "Strong time management skills" in the job description(Scenario: Check qualification in a job offer)  Time elapsed: 0.001 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.className: descr-container' (tried for 10 second(s) with 2 SECONDS interval)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: .descr\-container
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T15:28:36.4Z'
+System info: host: 'AGREBENKINA', ip: '172.31.213.95', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=C:\Users\agrebenkina\AppData\Local\Temp\rust_mozprofile.7yWwtuQ9BaYB, rotatable=false, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, moz:headless=false, platform=XP, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=57.0.4, platformVersion=6.3, moz:processID=6536, browserName=firefox, javascriptEnabled=true, platformName=XP, moz:webdriverClick=false}]
+Session ID: 3241ec0c-5295-4169-89f3-3ab295612328
+*** Element info: {Using=class name, value=descr-container}
+
+Scenario: Check qualification in a job offer  Time elapsed: 0.001 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: Expected condition failed: waiting for visibility of Proxy element for: DefaultElementLocator 'By.className: descr-container' (tried for 10 second(s) with 2 SECONDS interval)
+Caused by: org.openqa.selenium.NoSuchElementException: 
+Unable to locate element: .descr\-container
+For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
+Build info: version: '3.6.0', revision: '6fbf3ec767', time: '2017-09-27T15:28:36.4Z'
+System info: host: 'AGREBENKINA', ip: '172.31.213.95', os.name: 'Windows 8.1', os.arch: 'x86', os.version: '6.3', java.version: '1.8.0_111'
+Driver info: org.openqa.selenium.firefox.FirefoxDriver
+Capabilities [{moz:profile=C:\Users\agrebenkina\AppData\Local\Temp\rust_mozprofile.7yWwtuQ9BaYB, rotatable=false, timeouts={implicit=0, pageLoad=300000, script=30000}, pageLoadStrategy=normal, moz:headless=false, platform=XP, moz:accessibilityChecks=false, acceptInsecureCerts=true, browserVersion=57.0.4, platformVersion=6.3, moz:processID=6536, browserName=firefox, javascriptEnabled=true, platformName=XP, moz:webdriverClick=false}]
+Session ID: 3241ec0c-5295-4169-89f3-3ab295612328
+*** Element info: {Using=class name, value=descr-container}
+

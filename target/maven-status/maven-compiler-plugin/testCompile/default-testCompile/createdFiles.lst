@@ -1,0 +1,6 @@
+stepdefinitions\StepDefinitions.class
+SimpleStructure.class
+conf\Conf.class
+stepdefinitions\Preps.class
+pages\PageElements.class
+TestRunner.class
