@@ -6,6 +6,7 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -49,7 +50,10 @@ public class StepDefinitions  {
     @Then("^User see more than (\\d+) positions available in \"([^\"]*)\"$")
     public void user_see_more_than_positions_available_in(int numOfPositions, String city) throws Throwable {
         pageElements.enterKeyWordForCareersTable(city)
-                    .checkNumberOfResults(numOfPositions,city);
+                    .countNumberOfResults(city);
+        Assert.assertTrue("Number of positions is less than expected. Expected more than: " + numOfPositions + " but actual is "
+                + pageElements.countNumberOfResults(city), pageElements.countNumberOfResults(city) > numOfPositions);
+
     }
 
 

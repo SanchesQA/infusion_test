@@ -34,17 +34,14 @@ public class PageElements  extends conf.BasePage{
 
     }
 
-    public PageElements checkNumberOfResults(int numOfPositions, String keyWord){
+    public int countNumberOfResults(String keyWord){
         int count = driver.findElements(By.xpath("//tr[contains(@class, 'job-listing')]/td[contains(text(), '" + keyWord + "')]")).size();
-        Assert.assertTrue("Number of positions is less than expected. Expected more than: "+ numOfPositions+ " but actual is "
-                + count,count>numOfPositions);
-        return new PageElements(driver);
+        return count;
     }
 
     public PageElements enterKeyWordForCareersTable(String keyWord){
         waitForElement(By.xpath("//input[@placeholder='Keyword or city']"));
         WebElement cityInput = driver.findElement(By.xpath("//input[@placeholder='Keyword or city']"));
-
         cityInput.sendKeys(keyWord);
         return new PageElements(driver);
     }
@@ -68,7 +65,7 @@ public class PageElements  extends conf.BasePage{
         locationsDropdown.click();
         Actions actions = new Actions(driver);
         WebElement item =  driver.findElement(By.xpath("//div[@id='list3']//a[contains(text(), '"+countryName+"')]"));
-        actions.moveToElement(item).perform();
+        actions.moveToElement(item).perform(); // chrome can't just click it, element is always overlapped
         item.click();
         return new PageElements(driver);
     }
