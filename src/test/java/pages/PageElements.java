@@ -2,61 +2,98 @@ package pages;
 
 
 
+import gherkin.lexer.Pa;
+import org.junit.Assert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.openqa.selenium.support.ui.Wait;
+
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
-public class PageElements {
-
+public class PageElements  extends conf.BasePage{
 
     public PageElements(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.careersDropdown = careersDropdown;
+       super(driver);
+    }
+
+    public PageElements waitForElement(By locator){
+        Wait fluentWait = new FluentWait(driver).withTimeout(10, TimeUnit.SECONDS)
+                .pollingEvery(2, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
+        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
+        return this;
+    }
+
+    public PageElements checkDescriprion(String qualification){
+        waitForElement(By.className("descr-container"));
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(),'"+qualification+"')]")).isDisplayed());
+        return new PageElements(driver);
+
+    }
+
+    public PageElements checkNumberOfResults(int numOfPositions, String keyWord){
+        int count = driver.findElements(By.xpath("//tr[contains(@class, 'job-listing')]/td[contains(text(), '" + keyWord + "')]")).size();
+        Assert.assertTrue("Number of positions is less than expected. Expected more than: "+ numOfPositions+ " but actual is "
+                + count,count>numOfPositions);
+        return new PageElements(driver);
+    }
+
+    public PageElements enterKeyWordForCareersTable(String keyWord){
+        waitForElement(By.xpath("//input[@placeholder='Keyword or city']"));
+        WebElement cityInput = driver.findElement(By.xpath("//input[@placeholder='Keyword or city']"));
+
+        cityInput.sendKeys(keyWord);
+        return new PageElements(driver);
     }
 
 
-
-    @FindBy(xpath = "//*[@id='main-navbar']//a[contains(text(), 'Careers')]")
-    public WebElement careersDropdown;
-
-    public PageElements(WebElement careersDropdown) {
-        this.careersDropdown = careersDropdown;
+    public PageElements navigateTo(String url){
+        driver.get(url);
+        return new PageElements(driver);
     }
 
-    @FindBy (id="list3" )
-    public WebElement locationsDropdown;
-
-    @FindBy (id="jobsearchclick")
-    public WebElement btnSearch;
-
-    @FindBy (xpath = "//input[@placeholder='Keyword or city']")
-    public WebElement cityInput;
-
-    @FindBy (id="searchboxfilter")
-    public WebElement keyWordInput;
-
-    @FindBy (xpath = "//tbody")
-    public WebElement positionListTable;
-
-    @FindBy (className = "descr-container")
-    public WebElement descriptionCantainer;
-
-    public void enterValue(WebElement element, String string){
-        element.clear();
-        element.sendKeys(string);
-    }
-
-    public void clickElement(WebElement element){
-        element.click();
+    public  PageElements clickSearchCareerBtn(){
+        WebElement btnSearch = driver.findElement(By.id("jobsearchclick"));
+        btnSearch.click();
+        return new PageElements(driver);
     }
 
 
-    public void navigateToThePositionDescription(WebElement element, String positionName){
-            List<WebElement> positions = element.findElements(By.xpath("//td[@class='job-title']/a[contains(text(), '"+positionName+"')]"));
+    public PageElements clickCareerDropDown(){
+        WebElement careersDropdown = driver.findElement(By.xpath("//*[@id='main-navbar']//a[contains(text(), 'Careers')]"));
+        careersDropdown.click();
+        return new PageElements(driver);
+    }
+
+    public PageElements chooseLocation(String countryName){
+        WebElement locationsDropdown = driver.findElement(By.id("list3" ));
+        locationsDropdown.click();
+        Actions actions = new Actions(driver);
+        WebElement item =  driver.findElement(By.xpath("//div[@id='list3']//a[contains(text(), '"+countryName+"')]"));
+        actions.moveToElement(item).perform();
+        item.click();
+        return new PageElements(driver);
+    }
+
+    public PageElements enterPosition(String positionName){
+        WebElement keyWordInput=driver.findElement(By.id("searchboxfilter"));
+        keyWordInput.sendKeys(positionName);
+        return new PageElements(driver);
+    }
+
+
+    public void navigateToThePositionDescription(String positionName){
+            waitForElement(By.xpath("//tbody"));
+            WebElement positionListTable = driver.findElement(By.xpath("//tbody"));
+            List<WebElement> positions = positionListTable.findElements(By.xpath("//td[@class='job-title']/a[contains(text(), '"+positionName+"')]"));
             for (WebElement position : positions){
                 String positionFullName = position.getText();
                 if (positionFullName.contains(positionName)){
