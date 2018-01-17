@@ -25,12 +25,7 @@ public class PageElements  extends conf.BasePage{
        super(driver);
     }
 
-    public PageElements waitForElement(By locator){
-        Wait fluentWait = new FluentWait(driver).withTimeout(10, TimeUnit.SECONDS)
-                .pollingEvery(2, TimeUnit.SECONDS).ignoring(NoSuchElementException.class);
-        fluentWait.until(ExpectedConditions.visibilityOfElementLocated(locator));
-        return this;
-    }
+
 
     public PageElements checkDescriprion(String qualification){
         waitForElement(By.className("descr-container"));
@@ -54,11 +49,6 @@ public class PageElements  extends conf.BasePage{
         return new PageElements(driver);
     }
 
-
-    public PageElements navigateTo(String url){
-        driver.get(url);
-        return new PageElements(driver);
-    }
 
     public  PageElements clickSearchCareerBtn(){
         WebElement btnSearch = driver.findElement(By.id("jobsearchclick"));
