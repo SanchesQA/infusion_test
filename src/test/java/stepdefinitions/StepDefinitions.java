@@ -6,10 +6,9 @@ import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.Assert;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.interactions.Actions;
+
 import pages.PageElements;
 
 
@@ -27,9 +26,6 @@ public class StepDefinitions  {
     public void afterScenatio(){
         driver.quit();
     }
-
-
-
 
     @Given("^User is on the \"([^\"]*)\" page$")
     public void user_is_on_the_page(String url) throws Throwable {
@@ -54,7 +50,6 @@ public class StepDefinitions  {
     public void user_see_more_than_positions_available_in(int numOfPositions, String city) throws Throwable {
         pageElements.enterKeyWordForCareersTable(city)
                     .checkNumberOfResults(numOfPositions,city);
-
     }
 
 
@@ -66,7 +61,5 @@ public class StepDefinitions  {
     @Then("^User see qualification \"([^\"]*)\" in the job description$")
     public void userSeeQualificationInTheJobDescription(String qualification) throws Throwable {
         pageElements.checkDescriprion(qualification);
-
-
     }
 }
