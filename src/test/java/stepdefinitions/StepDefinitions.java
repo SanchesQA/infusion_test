@@ -1,6 +1,7 @@
 package stepdefinitions;
 
 
+import cucumber.api.PendingException;
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
 import cucumber.api.java.en.Given;
@@ -65,5 +66,8 @@ public class StepDefinitions  {
     @Then("^User see qualification \"([^\"]*)\" in the job description$")
     public void userSeeQualificationInTheJobDescription(String qualification) throws Throwable {
         pageElements.checkDescriprion(qualification);
+        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(),'"+qualification+"')]")).isDisplayed());
     }
+
+
 }

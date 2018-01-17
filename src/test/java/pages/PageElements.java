@@ -29,7 +29,6 @@ public class PageElements  extends conf.BasePage{
 
     public PageElements checkDescriprion(String qualification){
         waitForElement(By.className("descr-container"));
-        Assert.assertTrue(driver.findElement(By.xpath("//*[contains(text(),'"+qualification+"')]")).isDisplayed());
         return new PageElements(driver);
 
     }
