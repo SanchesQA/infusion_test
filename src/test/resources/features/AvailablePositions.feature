@@ -1,18 +1,16 @@
 Feature: List of available positions
 
 
-  Scenario: Looking for positions in Poland
+  Scenario Outline: Looking for positions in Poland
     Given User is on the "https://www.avanade.com/en" page
     And User navigates to Career block
     When User looking for " " available positions in "Poland"
-    Then User see more than 5 positions available in "Krakow"
+    Then User see more than <num_of_positions> positions available in "<city>"
+    Examples: Positions combination
+    |num_of_positions|city|
+    |3               |Krakow|
+    |1               |Warsaw|
 
-
-  Scenario: Looking for positions in Warsaw
-    Given User is on the "https://www.avanade.com/en" page
-    And User navigates to Career block
-    When User looking for " " available positions in "Poland"
-    Then User see more than 0 positions available in "Warsaw"
 
   Scenario: Check qualification in a job offer
     Given User is on the "https://www.avanade.com/en" page

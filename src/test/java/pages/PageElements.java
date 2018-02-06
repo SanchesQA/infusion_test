@@ -31,6 +31,7 @@ public class PageElements  extends conf.BasePage{
     public PageElements enterKeyWordForCareersTable(String keyWord){
         waitForElement(By.xpath("//input[@placeholder='Keyword or city']"));
         WebElement cityInput = driver.findElement(By.xpath("//input[@placeholder='Keyword or city']"));
+        cityInput.clear();
         cityInput.sendKeys(keyWord);
         return new PageElements(driver);
     }
