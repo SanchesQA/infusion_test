@@ -6,17 +6,13 @@ formatter.feature({
   "id": "list-of-available-positions",
   "keyword": "Feature"
 });
-formatter.before({
-  "duration": 4458324766,
-  "status": "passed"
-});
-formatter.scenario({
+formatter.scenarioOutline({
   "line": 4,
-  "name": "Looking for positions in Cracow",
+  "name": "Looking for positions in Poland",
   "description": "",
-  "id": "list-of-available-positions;looking-for-positions-in-cracow",
-  "type": "scenario",
-  "keyword": "Scenario"
+  "id": "list-of-available-positions;looking-for-positions-in-poland",
+  "type": "scenario_outline",
+  "keyword": "Scenario Outline"
 });
 formatter.step({
   "line": 5,
@@ -35,7 +31,76 @@ formatter.step({
 });
 formatter.step({
   "line": 8,
-  "name": "User see more than 5 positions available in \"Krakow\"",
+  "name": "User see more than \u003cnum_of_positions\u003e positions available in \"\u003ccity\u003e\"",
+  "keyword": "Then "
+});
+formatter.examples({
+  "line": 9,
+  "name": "Positions combination",
+  "description": "",
+  "id": "list-of-available-positions;looking-for-positions-in-poland;positions-combination",
+  "rows": [
+    {
+      "cells": [
+        "num_of_positions",
+        "city"
+      ],
+      "line": 10,
+      "id": "list-of-available-positions;looking-for-positions-in-poland;positions-combination;1"
+    },
+    {
+      "cells": [
+        "3",
+        "Krakow"
+      ],
+      "line": 11,
+      "id": "list-of-available-positions;looking-for-positions-in-poland;positions-combination;2"
+    },
+    {
+      "cells": [
+        "1",
+        "Warsaw"
+      ],
+      "line": 12,
+      "id": "list-of-available-positions;looking-for-positions-in-poland;positions-combination;3"
+    }
+  ],
+  "keyword": "Examples"
+});
+formatter.before({
+  "duration": 3143650802,
+  "status": "passed"
+});
+formatter.scenario({
+  "line": 11,
+  "name": "Looking for positions in Poland",
+  "description": "",
+  "id": "list-of-available-positions;looking-for-positions-in-poland;positions-combination;2",
+  "type": "scenario",
+  "keyword": "Scenario Outline"
+});
+formatter.step({
+  "line": 5,
+  "name": "User is on the \"https://www.avanade.com/en\" page",
+  "keyword": "Given "
+});
+formatter.step({
+  "line": 6,
+  "name": "User navigates to Career block",
+  "keyword": "And "
+});
+formatter.step({
+  "line": 7,
+  "name": "User looking for \" \" available positions in \"Poland\"",
+  "keyword": "When "
+});
+formatter.step({
+  "line": 8,
+  "name": "User see more than 3 positions available in \"Krakow\"",
+  "matchedColumns": [
+    0,
+    1
+  ],
   "keyword": "Then "
 });
 formatter.match({
@@ -48,14 +113,14 @@ formatter.match({
   "location": "StepDefinitions.user_is_on_the_page(String)"
 });
 formatter.result({
-  "duration": 8546087316,
+  "duration": 10925574583,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinitions.user_navigates_to_Career_block()"
 });
 formatter.result({
-  "duration": 531263171,
+  "duration": 2815866686,
   "status": "passed"
 });
 formatter.match({
@@ -72,13 +137,13 @@ formatter.match({
   "location": "StepDefinitions.user_looking_for_available_positions_in(String,String)"
 });
 formatter.result({
-  "duration": 4039079667,
+  "duration": 441857047,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "5",
+      "val": "3",
       "offset": 19
     },
     {
@@ -86,47 +151,50 @@ formatter.match({
       "offset": 45
     }
   ],
-  "location": "StepDefinitions.user_see_more_than_positions_available_in(int,String)"
+  "location": "StepDefinitions.userSeeMoreThanNum_of_positionsPositionsAvailableInCity(int,String)"
 });
 formatter.result({
-  "duration": 4595288018,
-  "error_message": "java.lang.AssertionError: Number of positions is less than expected. Expected: 5 but actual is 4\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepdefinitions.StepDefinitions.user_see_more_than_positions_available_in(StepDefinitions.java:68)\r\n\tat ✽.Then User see more than 5 positions available in \"Krakow\"(AvailablePositions.feature:8)\r\n",
-  "status": "failed"
+  "duration": 4013064311,
+  "status": "passed"
 });
 formatter.after({
-  "duration": 910724047,
+  "duration": 813838787,
   "status": "passed"
 });
 formatter.before({
-  "duration": 7903849000,
+  "duration": 3018803019,
   "status": "passed"
 });
 formatter.scenario({
-  "line": 10,
-  "name": "Looking for positions in Warsaw",
+  "line": 12,
+  "name": "Looking for positions in Poland",
   "description": "",
-  "id": "list-of-available-positions;looking-for-positions-in-warsaw",
+  "id": "list-of-available-positions;looking-for-positions-in-poland;positions-combination;3",
   "type": "scenario",
-  "keyword": "Scenario"
+  "keyword": "Scenario Outline"
 });
 formatter.step({
-  "line": 11,
+  "line": 5,
   "name": "User is on the \"https://www.avanade.com/en\" page",
   "keyword": "Given "
 });
 formatter.step({
-  "line": 12,
+  "line": 6,
   "name": "User navigates to Career block",
   "keyword": "And "
 });
 formatter.step({
-  "line": 13,
+  "line": 7,
   "name": "User looking for \" \" available positions in \"Poland\"",
   "keyword": "When "
 });
 formatter.step({
-  "line": 14,
-  "name": "User see more than 0 positions available in \"Warsaw\"",
+  "line": 8,
+  "name": "User see more than 1 positions available in \"Warsaw\"",
+  "matchedColumns": [
+    0,
+    1
+  ],
   "keyword": "Then "
 });
 formatter.match({
@@ -139,14 +207,14 @@ formatter.match({
   "location": "StepDefinitions.user_is_on_the_page(String)"
 });
 formatter.result({
-  "duration": 10099315541,
+  "duration": 6778282830,
   "status": "passed"
 });
 formatter.match({
   "location": "StepDefinitions.user_navigates_to_Career_block()"
 });
 formatter.result({
-  "duration": 520259785,
+  "duration": 2803545663,
   "status": "passed"
 });
 formatter.match({
@@ -163,13 +231,13 @@ formatter.match({
   "location": "StepDefinitions.user_looking_for_available_positions_in(String,String)"
 });
 formatter.result({
-  "duration": 3666179305,
+  "duration": 423730436,
   "status": "passed"
 });
 formatter.match({
   "arguments": [
     {
-      "val": "0",
+      "val": "1",
       "offset": 19
     },
     {
@@ -177,118 +245,15 @@ formatter.match({
       "offset": 45
     }
   ],
-  "location": "StepDefinitions.user_see_more_than_positions_available_in(int,String)"
+  "location": "StepDefinitions.userSeeMoreThanNum_of_positionsPositionsAvailableInCity(int,String)"
 });
 formatter.result({
-  "duration": 4036044251,
-  "status": "passed"
+  "duration": 4506470077,
+  "error_message": "java.lang.AssertionError: Number of positions is less than expected. Expected more than: 1 but actual is 0\r\n\tat org.junit.Assert.fail(Assert.java:88)\r\n\tat org.junit.Assert.assertTrue(Assert.java:41)\r\n\tat stepdefinitions.StepDefinitions.userSeeMoreThanNum_of_positionsPositionsAvailableInCity(StepDefinitions.java:68)\r\n\tat ✽.Then User see more than 1 positions available in \"Warsaw\"(AvailablePositions.feature:8)\r\n",
+  "status": "failed"
 });
 formatter.after({
-  "duration": 844940790,
-  "status": "passed"
-});
-formatter.before({
-  "duration": 3009587984,
-  "status": "passed"
-});
-formatter.scenario({
-  "line": 16,
-  "name": "Check qualification in a job offer",
-  "description": "",
-  "id": "list-of-available-positions;check-qualification-in-a-job-offer",
-  "type": "scenario",
-  "keyword": "Scenario"
-});
-formatter.step({
-  "line": 17,
-  "name": "User is on the \"https://www.avanade.com/en\" page",
-  "keyword": "Given "
-});
-formatter.step({
-  "line": 18,
-  "name": "User navigates to Career block",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 19,
-  "name": "User looking for \"Entry Level Software Engineer\" available positions in \"All Locations\"",
-  "keyword": "And "
-});
-formatter.step({
-  "line": 20,
-  "name": "User navigates to a job description for \"Entry Level Software Engineer, Seattle\"",
-  "keyword": "When "
-});
-formatter.step({
-  "line": 21,
-  "name": "User see qualification \"Strong time management skills\" in the job description",
-  "keyword": "Then "
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "https://www.avanade.com/en",
-      "offset": 16
-    }
-  ],
-  "location": "StepDefinitions.user_is_on_the_page(String)"
-});
-formatter.result({
-  "duration": 8347435043,
-  "status": "passed"
-});
-formatter.match({
-  "location": "StepDefinitions.user_navigates_to_Career_block()"
-});
-formatter.result({
-  "duration": 452532378,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Entry Level Software Engineer",
-      "offset": 18
-    },
-    {
-      "val": "All Locations",
-      "offset": 73
-    }
-  ],
-  "location": "StepDefinitions.user_looking_for_available_positions_in(String,String)"
-});
-formatter.result({
-  "duration": 4124610351,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Entry Level Software Engineer, Seattle",
-      "offset": 41
-    }
-  ],
-  "location": "StepDefinitions.userNavigatesToAJobDescriptionFor(String)"
-});
-formatter.result({
-  "duration": 3887313792,
-  "status": "passed"
-});
-formatter.match({
-  "arguments": [
-    {
-      "val": "Strong time management skills",
-      "offset": 24
-    }
-  ],
-  "location": "StepDefinitions.userSeeQualificationInTheJobDescription(String)"
-});
-formatter.result({
-  "duration": 63014035,
-  "status": "passed"
-});
-formatter.after({
-  "duration": 811231373,
+  "duration": 823819696,
   "status": "passed"
 });
 });
